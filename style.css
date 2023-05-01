@@ -4,9 +4,15 @@
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: gray-500scale;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 html {
@@ -60,7 +66,7 @@ html {
   position: fixed;
   z-index: 999;
   top: 90%;
-  left: 95%;
+  left: 90%;
 
   display: flex;
   justify-content: center;
@@ -102,6 +108,42 @@ html {
 
 /* Navbar */
 
+.navbar {
+  width: 100%;
+  height: 6rem;
+
+  background-color: var(--bg-blue-500);
+  position: absolute;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1.5rem 6rem;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--bg-white);
+  font-weight: 700;
+  font-size: 20px;
+  font-family: var(--text-primary);
+}
+
+.logo {
+  background-color: royalblue;
+  width: 4rem;
+  height: 4rem;
+}
+
+/*
 .header {
   background-color: var(--bg-blue-500);
   display: flex;
@@ -112,15 +154,10 @@ html {
   width: 100%;
   height: 5rem;
 
-  /* position: fixed;
-  z-index: 12; */
-}
 
-.logo {
-  background-color: royalblue;
-  width: 4rem;
-  height: 4rem;
 }
+ 
+
 
 .logo img {
   width: 3.5rem;
@@ -146,7 +183,7 @@ a {
 }
 a:hover {
   color: var(--bg-orange-200);
-}
+} */
 
 section {
   height: 100vh;
@@ -182,7 +219,7 @@ section:nth-child(2n) {
 }
 
 .hero {
-  height: 80vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -387,6 +424,9 @@ section:nth-child(2n) {
 .text-content h2 span {
   font-size: 56px;
 }
+.logo-mobile {
+  display: none;
+}
 
 footer {
   width: 100%;
@@ -399,7 +439,7 @@ footer {
 
 @media (max-width: 1024px) {
   .hero {
-    padding: 0rem 3rem;
+    padding: 16rem 3rem;
   }
 
   .back-top {
@@ -447,70 +487,220 @@ footer {
 /* Mobile Viewer */
 
 @media (max-width: 600px) {
-  /* 
   .back-top {
     left: 80%;
   }
 
-  .logo {
-    width: 4rem;
-    height: 4rem;
+  .hero {
+    gap: 1rem;
+    padding: 26rem 0 0 0;
+    font-size: 1.2rem;
   }
 
-  .logo img {
-    width: 3.5rem;
-    height: 3.5rem;
-  }
-
-  .header {
-    background-color: transparent;
-    padding: 2rem 2rem;
+  .nav-links {
+    display: none;
   }
 
   .mobile-navbar {
+    cursor: pointer;
     display: block;
+    font-size: 42px;
   }
 
-  .mobile-navbar i {
-    font-size: 32px;
-    color: var(--bg-orange-500);
+  .navbar {
+    padding: 1.5rem 1rem;
   }
 
-  .header{
-    width: 100%;
-    height: 100vh;  
+  .nav-links {
+    top: 0;
 
-    align-items: start;
+    left: 100%;
+    /* visibility: hidden; */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+
+    transition: all 0.5s ease;
 
     background-color: var(--bg-white);
-  }
-  
-  nav ul {
-    position: absolute;
-    flex-direction: column;
 
-    text-align: center;
-
-    top: 30%;
-    right: 22%;
-  }
-
-  nav a {
-    color: var(--bg-black-200);
-
-    font-size: 3rem;
-  }
-
-  section:first-child {
+    width: 100%;
     height: 100vh;
-    background-image: url("https://i.ibb.co/jkyJx2r/Background.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: left;
   }
 
-  .hero {
-    gap: 1rem;
-    font-size: 1.2rem;
-  } */
+  .nav-links ul {
+    flex-direction: column;
+  }
+
+  .nav-links a {
+    color: var(--bg-black-200);
+    font-size: 2rem;
+  }
+
+  .content,
+  .container {
+    padding: 1rem 2rem;
+    flex-direction: column;
+    gap: 6rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .wrap {
+    padding-top: 0;
+  }
+
+  .card-info h2 {
+    font-size: 1rem;
+}
+  .wrap p {
+    font-size: 0.6rem;
+  }
+
+  .card-text h2 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .card-text p {
+    font-size: 0.6rem;
+  }
+
+  .card-text span {
+    font-size: .8rem;
+  }
+
+  .outer-card, .inner-card {
+    max-width: 16rem;
+    max-height: 18rem;
+}
+
+.inner-card {
+  top: .7rem;
+  left: .6rem;
+}
+
+
+.text-content h2 {
+  font-size: 20px;
+}
+.text-content h2 span {
+  font-size: 24px;
+}
+.text-content p span {
+  font-size: 16px;
+}
+
+
+.text-content p {
+  font-size: 12px;
+}
+
+.container-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#about {
+  display: flex;
+
+  align-items: center; 
+  justify-content: center;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.mobile-menu {
+  left: 0;
+  overflow-x: hidden;
+}
+
+svg {
+  height: 80px;
+  position: absolute;
+  width: 80px;
+}
+
+.plate {
+  height: 80px;
+  width: 80px;
+}
+.burger {
+  filter: url(#gooeyness);
+}
+.x {
+  transform: scale(0);
+  transition: transform 400ms;
+}
+.line {
+  fill: none;
+  stroke: var(--bg-orange-500);
+  stroke-width: 6px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transform-origin: 50%;
+  transition: stroke-dasharray 500ms 200ms, stroke-dashoffset 500ms 200ms,
+    transform 500ms 200ms;
+}
+.x .line {
+  stroke-width: 5.5px;
+}
+
+/* Die vierte teller */
+.plate4 .x {
+  transition: transform 400ms;
+}
+.plate4 .line {
+  transform-origin: 50%;
+  transition: transform 400ms 100ms;
+}
+.active.plate4 .line {
+  transition: transform 400ms;
+}
+.active.plate4 .line1 {
+  transform: translateX(18px) translateY(-3px) rotate(-45deg) scale(0.7);
+}
+.active.plate4 .line2 {
+  transform: translateX(-18px) translateY(-3px) rotate(45deg) scale(0.7);
+}
+.active.plate4 .line3 {
+  transform: translateY(0px) rotate(45deg) scale(0.7);
+}
+.active.plate4 .line4 {
+  transform: translateY(0px) rotate(-45deg) scale(0.7);
+}
+.active.plate4 .line5 {
+  transform: translateX(18px) translateY(3px) rotate(45deg) scale(0.7);
+}
+.active.plate4 .line6 {
+  transform: translateX(-18px) translateY(3px) rotate(-45deg) scale(0.7);
+}
+.active.plate4 .x {
+  transition: transform 400ms 100ms;
+  transform: scale(1);
 }
