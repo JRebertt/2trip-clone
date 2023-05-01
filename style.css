@@ -9,14 +9,11 @@
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: gray-500scale;
+  
 }
-
-body {
-  overflow-x: hidden;
-}
-
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden !important;
 }
 
 ::-webkit-scrollbar {
@@ -520,7 +517,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    position: fixed;
 
     transition: all 0.5s ease;
 
